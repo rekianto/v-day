@@ -67,7 +67,7 @@ function toggleMusic() {
 }
 
 function handleYesClick() {
-    if (!runawayEnabled || !yesBtnEnabled) {
+    if (!yesBtnEnabled) {
         // Tease her to try No first
         const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
         yesTeasedCount++
