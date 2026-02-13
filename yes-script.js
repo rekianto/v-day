@@ -21,39 +21,39 @@ window.addEventListener('load', () => {
 function launchConfetti() {
     const colors = ['#ff69b4', '#ff1493', '#ff85a2', '#ffb3c1', '#ff0000', '#ff6347', '#fff', '#ffdf00']
     const duration = 15000
-    const end = Date.now() + duration
+    const animationEnd = Date.now() + duration
 
+    // 🎉 Initial romantic burst
     confetti({
-        particleCount: 150,
-        spread: 100,
-        origin: { x: 0.5, y: 0.3 },
+        particleCount: 180,
+        spread: 110,
+        origin: { x: 0.5, y: 0.4 },
         colors
     })
 
     const interval = setInterval(() => {
-        if (Date.now() > end) {
+        const timeLeft = animationEnd - Date.now()
+
+        if (timeLeft <= 0) {
             clearInterval(interval)
             return
         }
 
-        confetti({
-            particleCount: 40,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0, y: 0.6 },
-            colors
-        })
+        // Semakin mendekati akhir → semakin sedikit
+        const progress = timeLeft / duration
+        const particleCount = Math.floor(50 * progress)
 
         confetti({
-            particleCount: 40,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1, y: 0.6 },
-            colors
+            particleCount: particleCount,
+            spread: 70,
+            origin: { x: Math.random(), y: Math.random() - 0.2 },
+            colors,
+            ticks: 200,
+            gravity: 1
         })
-    }, 300)
+
+    }, 250)
 }
-
 
 /* ================= MUSIC ================= */
 
