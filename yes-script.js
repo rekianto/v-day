@@ -19,17 +19,9 @@ window.addEventListener('load', () => {
 /* ================= CONFETTI ================= */
 
 function launchConfetti() {
-    const colors = ['#ff69b4', '#ff1493', '#ff85a2', '#ffb3c1', '#ff0000', '#ff6347', '#fff', '#ffdf00']
-    const duration = 15000
+    const colors = ['#ff69b4', '#ff1493', '#ff85a2', '#ffb3c1', '#ffffff']
+    const duration = 20000
     const animationEnd = Date.now() + duration
-
-    // 🎉 Initial romantic burst
-    confetti({
-        particleCount: 180,
-        spread: 110,
-        origin: { x: 0.5, y: 0.4 },
-        colors
-    })
 
     const interval = setInterval(() => {
         const timeLeft = animationEnd - Date.now()
@@ -39,20 +31,25 @@ function launchConfetti() {
             return
         }
 
-        // Semakin mendekati akhir → semakin sedikit
+        // Makin lama makin sedikit (fade smooth)
         const progress = timeLeft / duration
-        const particleCount = Math.floor(50 * progress)
+        const particleCount = Math.floor(30 * progress)
 
         confetti({
             particleCount: particleCount,
-            spread: 70,
-            origin: { x: Math.random(), y: Math.random() - 0.2 },
-            colors,
-            ticks: 200,
-            gravity: 1
+            startVelocity: 20,   // pelan jatuhnya
+            spread: 60,
+            ticks: 250,
+            gravity: 0.6,        // efek jatuh lembut
+            scalar: 0.9,
+            origin: {
+                x: Math.random(), // random kiri-kanan
+                y: 0              // dari atas
+            },
+            colors
         })
 
-    }, 250)
+    }, 300)
 }
 
 /* ================= MUSIC ================= */
