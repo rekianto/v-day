@@ -90,12 +90,18 @@ function handleYesClick() {
     window.location.href = 'yes.html'
 }
 
-function showTeaseMessage(msg) {
+function showTeaseMessage(msg, stay = false) {
     let toast = document.getElementById('tease-toast')
     toast.textContent = msg
     toast.classList.add('show')
+
     clearTimeout(toast._timer)
-    toast._timer = setTimeout(() => toast.classList.remove('show'), 2500)
+
+    if (!stay) {
+        toast._timer = setTimeout(() => 
+            toast.classList.remove('show'), 
+        2500)
+    }
 }
 
 function handleNoClick() {
