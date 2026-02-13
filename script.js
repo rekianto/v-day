@@ -135,8 +135,8 @@ function runAway() {
     const maxX = window.innerWidth - btnW - margin
     const maxY = window.innerHeight - btnH - margin
 
-    const randomX = Math.random() * maxX + margin / 2
-    const randomY = Math.random() * maxY + margin / 2
+    const randomX = Math.max(margin, Math.random() * maxX)
+    const randomY = Math.max(margin, Math.random() * maxY)
 
     noBtn.style.position = 'fixed'
     noBtn.style.left = `${randomX}px`
