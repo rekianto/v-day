@@ -77,12 +77,12 @@ function toggleMusic() {
 function handleYesClick() {
     if (!yesBtnEnabled) {
         // Tease her to try No first
-        if(!runawayEnabled) {
-             const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
-            yesTeasedCount++
-            showTeaseMessage(msg)
-            return
-        }
+        //if(!runawayEnabled) {
+           //  const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
+           // yesTeasedCount++
+          //  showTeaseMessage(msg)
+          //  return
+       // }
         const msg2 = yesTeasePokesFinal[Math.min(yesTeasedCountFinal, yesTeasePokesFinal.length - 1)]
         yesTeasedCountFinal++
         showTeaseMessage(msg2)
