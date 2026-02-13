@@ -21,12 +21,12 @@ const noMessages = [
     "Aku kabur yaa… tangkep kalau bisa beb 😜💘"
 ]
 
-const yesTeasePokesFinal = [
-    "Coba 1 tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
-    "Ayo deh, tekan 'No' sekali aja 👀",
-    "Rugi loh kalau gak coba 😈",
-    "Coba tekan 'No' lagi beb aku tunggu... 😉"
-]
+//const yesTeasePokesFinal = [
+ //   "Coba 1 tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
+ //   "Ayo deh, tekan 'No' sekali aja 👀",
+//    "Rugi loh kalau gak coba 😈",
+ //   "Coba tekan 'No' lagi beb aku tunggu... 😉"
+//]
 
 const yesTeasePokes = [
     "Coba tangkap aku dulu... 😏",
