@@ -22,17 +22,17 @@ const noMessages = [
 ]
 
 const yesTeasePokes = [
-    "Coba tangkap aku dulu... 😏",
-    "Ayo semangats bebss kuu 👀",
-    "Dikit lagi kejer aku bebb 😌",
-    "Yah ketangkap juga 😳 Oke deh sekarang boleh pilih YES ❤️😉"
-]
-
-const yesTeasePokesFinal = [
     "Coba tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
     "Ayo deh, tekan 'No' sekali aja 👀",
     "Rugi loh kalau gak coba 😈",
     "Coba tekan 'No' lagi beb aku tunggu... 😉"
+]
+
+const yesTeasePokesFinal = [
+    "Coba tangkap aku dulu... 😏",
+    "Ayo semangats bebss kuu 👀",
+    "Dikit lagi kejer aku bebb 😌",
+    "Yah ketangkap juga 😳 Oke deh sekarang boleh pilih YES ❤️😉"
 ]
 
 let yesTeasedCount = 0
