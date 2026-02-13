@@ -31,8 +31,7 @@ const yesTeasePokes = [
 const yesTeasePokesFinal = [
     "Coba tangkap aku dulu... 😏",
     "Ayo semangats bebss kuu 👀",
-    "Dikit lagi kejer aku bebb 😌",
-    "Yah ketangkap juga 😳 Oke deh sekarang boleh pilih YES ❤️😉"
+    "Dikit lagi kejer aku bebb 😌"
 ]
 
 let yesTeasedCount = 0
@@ -83,7 +82,7 @@ function handleYesClick() {
            showTeaseMessage(msg)
            return
         }
-        const msg2 = yesTeasePokesFinal[Math.min(noClickCount - 9, yesTeasePokesFinal.length - 1)]
+        const msg2 = "Ayok beb belum boleh teken 'Yes' yaa... 😉"
         showTeaseMessage(msg2)
         return
        
@@ -103,9 +102,16 @@ function handleNoClick() {
     noClickCount++
 
     // Cycle through guilt-trip messages
-    const msgIndex = Math.min(noClickCount, noMessages.length - 1)
-    noBtn.textContent = noMessages[msgIndex]
-
+    if(!runawayEnabled) {
+        const msgIndex = Math.min(noClickCount, noMessages.length - 1)
+        noBtn.textContent = noMessages[msgIndex]
+    }
+    else
+    {
+        const msgIndex = Math.min(noClickCount - 8, yesTeasePokesFinal.length - 1)
+        noBtn.textContent = yesTeasePokesFinal[msgIndex]
+    }
+    
     // Grow the Yes button bigger each time
     const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize)
     yesBtn.style.fontSize = `${currentSize * 1.1}px`
@@ -132,6 +138,10 @@ function handleNoClick() {
     // Btn Yes starts at click 12
     if (noClickCount >= 12 && !yesBtnEnabled) {
         yesBtnEnabled = true
+        noBtn.style.display = "none";
+        
+        const msg = "Yah ketangkap juga 😳 Oke deh sekarang boleh pilih YES ❤️😉"
+        showTeaseMessage(msg)
     }
     
 }
