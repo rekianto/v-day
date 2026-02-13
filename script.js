@@ -22,7 +22,7 @@ const noMessages = [
 ]
 
 const yesTeasePokesFinal = [
-    "Coba tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
+    "Coba 1 tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
     "Ayo deh, tekan 'No' sekali aja 👀",
     "Rugi loh kalau gak coba 😈",
     "Coba tekan 'No' lagi beb aku tunggu... 😉"
