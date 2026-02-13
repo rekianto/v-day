@@ -33,6 +33,7 @@ let yesTeasedCount = 0
 let noClickCount = 0
 let runawayEnabled = false
 let musicPlaying = true
+let yesBtnEnabled = false
 
 const catGif = document.getElementById('cat-gif')
 const yesBtn = document.getElementById('yes-btn')
@@ -66,7 +67,7 @@ function toggleMusic() {
 }
 
 function handleYesClick() {
-    if (!runawayEnabled) {
+    if (!runawayEnabled || !yesBtnEnabled) {
         // Tease her to try No first
         const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
         yesTeasedCount++
@@ -93,7 +94,7 @@ function handleNoClick() {
 
     // Grow the Yes button bigger each time
     const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize)
-    yesBtn.style.fontSize = `${currentSize * 1.15}px`
+    yesBtn.style.fontSize = `${currentSize * 1.1}px`
     const padY = Math.min(18 + noClickCount * 3, 40)
     const padX = Math.min(45 + noClickCount * 6, 90)
     yesBtn.style.padding = `${padY}px ${padX}px`
@@ -108,11 +109,17 @@ function handleNoClick() {
     const gifIndex = Math.min(noClickCount, gifStages.length - 1)
     swapGif(gifStages[gifIndex])
 
-    // Runaway starts at click 5
-    if (noClickCount >= 7 && !runawayEnabled) {
+    // Runaway starts at click 8
+    if (noClickCount >= 8 && !runawayEnabled) {
         enableRunaway()
         runawayEnabled = true
     }
+    
+    // Btn Yes starts at click 12
+    if (noClickCount >= 12 && !yesBtnEnabled) {
+        yesBtnEnabled = true
+    }
+    
 }
 
 function swapGif(src) {
