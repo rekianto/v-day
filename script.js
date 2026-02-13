@@ -21,13 +21,6 @@ const noMessages = [
     "Aku kabur yaa… tangkep kalau bisa beb 😜💘"
 ]
 
-//const yesTeasePokesFinal = [
- //   "Coba 1 tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
- //   "Ayo deh, tekan 'No' sekali aja 👀",
-//    "Rugi loh kalau gak coba 😈",
- //   "Coba tekan 'No' lagi beb aku tunggu... 😉"
-//]
-
 const yesTeasePokes = [
     "Coba tangkap aku dulu... 😏",
     "Ayo semangats bebss kuu 👀",
@@ -76,17 +69,14 @@ function toggleMusic() {
 
 function handleYesClick() {
     if (!yesBtnEnabled) {
-        // Tease her to try No first
-        //if(!runawayEnabled) {
-           //  const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
-           // yesTeasedCount++
-          //  showTeaseMessage(msg)
-          //  return
-       // }
-        const msg2 = yesTeasePokesFinal[Math.min(yesTeasedCountFinal, yesTeasePokesFinal.length - 1)]
-        yesTeasedCountFinal++
-        showTeaseMessage(msg2)
-        return
+        //Tease her to try No first
+        if(!runawayEnabled) {
+            const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
+            yesTeasedCount++
+            showTeaseMessage(msg)
+            return
+        }
+       
     }
     window.location.href = 'yes.html'
 }
