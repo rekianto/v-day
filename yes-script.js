@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 
 function launchConfetti() {
     const colors = ['#ff69b4', '#ff1493', '#ff85a2', '#ffb3c1', '#ffffff']
-    const duration = 20000
+    const duration = 60000
     const animationEnd = Date.now() + duration
 
     const interval = setInterval(() => {
