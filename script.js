@@ -36,6 +36,7 @@ const yesTeasePokesFinal = [
 ]
 
 let yesTeasedCount = 0
+let yesTeasedCountFinal = 0
 
 let noClickCount = 0
 let runawayEnabled = false
@@ -77,8 +78,8 @@ function handleYesClick() {
     if (!yesBtnEnabled) {
         // Tease her to try No first
         if(runawayEnabled) {
-            const msg = yesTeasePokesFinal[Math.min(yesTeasePokesFinal, yesTeasePokesFinal.length - 1)]
-            yesTeasePokesFinal++
+            const msg = yesTeasePokesFinal[Math.min(yesTeasedCountFinal, yesTeasePokesFinal.length - 1)]
+            yesTeasedCountFinal++
             showTeaseMessage(msg)
             return
         }
