@@ -22,10 +22,17 @@ const noMessages = [
 ]
 
 const yesTeasePokes = [
-    "Coba tekan 'Tidak' dulu... pasti kamu penasaran kan bakal apa 😏",
-    "Ayo deh, tekan 'Tidak' sekali aja 👀",
+    "Coba tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
+    "Ayo deh, tekan 'No' sekali aja 👀",
     "Rugi loh kalau gak coba 😈",
-    "Coba aja tekan 'Tidak'… aku tunggu 😉"
+    "Coba aja tekan 'No'… aku tunggu 😉"
+]
+
+const yesTeasePokesFinal = [
+    "Coba tangkap aku dulu... 😏",
+    "Ayo semangats bebss kuu 👀",
+    "Dikit lagi kejer aku bebb 😌",
+    "Yah ketangkap juga 😳 Oke deh sekarang boleh pilih YES ❤️😉"
 ]
 
 let yesTeasedCount = 0
@@ -110,7 +117,7 @@ function handleNoClick() {
     swapGif(gifStages[gifIndex])
 
     // Runaway starts at click 8
-    if (noClickCount >= 10 && !runawayEnabled) {
+    if (noClickCount >= 8 && !runawayEnabled) {
         enableRunaway()
         runawayEnabled = true
     }
