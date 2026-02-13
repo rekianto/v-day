@@ -77,19 +77,16 @@ function toggleMusic() {
 function handleYesClick() {
     if (!yesBtnEnabled) {
         // Tease her to try No first
-        if(runawayEnabled) {
-            const msg = yesTeasePokesFinal[Math.min(yesTeasedCountFinal, yesTeasePokesFinal.length - 1)]
-            yesTeasedCountFinal++
-            showTeaseMessage(msg)
-            return
-        }
-        else {
-            const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
+        if(!runawayEnabled) {
+             const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
             yesTeasedCount++
             showTeaseMessage(msg)
             return
         }
-        
+        const msg2 = yesTeasePokesFinal[Math.min(yesTeasedCountFinal, yesTeasePokesFinal.length - 1)]
+        yesTeasedCountFinal++
+        showTeaseMessage(msg2)
+        return
     }
     window.location.href = 'yes.html'
 }
