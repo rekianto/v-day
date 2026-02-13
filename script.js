@@ -17,21 +17,21 @@ const noMessages = [
     "Aku ngambek ya kalo gak mau... 😤",
     "Masa tega sih... 💔",
     "Jangan giniin aku dong beb... 😭",
-    "Kesempatan terakhir yaa nihh, habis ini aku pakai jurus terakhir 😌",
-    "Aku kabur yaa… tangkep kalau bisa beb 😜💘"
+    "Kesempatan terakhir yaa nihh, habis ini aku pakai jurus terakhir... 😌",
+    "Aku kabur yaa… tangkep kalau bisa beb... 😜💘"
 ]
 
 const yesTeasePokes = [
-    "Coba tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
-    "Ayo deh, tekan 'No' sekali aja 👀",
-    "Rugi loh kalau gak coba 😈",
+    "Coba tekan 'No' dulu... pasti kamu penasaran kan bakal apa... 😏",
+    "Ayo deh, tekan 'No' sekali aja... 👀",
+    "Rugi loh kalau gak coba... 😈",
     "Coba tekan 'No' lagi beb aku tunggu... 😉"
 ]
 
 const yesTeasePokesFinal = [
-    "Coba tangkap aku dulu... 😏",
-    "Ayo semangats bebss kuu 👀",
-    "Dikit lagi kejer aku bebb 😌"
+    "Kejar aku lagii beb... 😏",
+    "Ayo semangats bebss kuu pasti bisa... 👀",
+    "Dikit lagi tangkap aku bebb... 😌"
 ]
 
 let yesTeasedCount = 0
@@ -146,8 +146,8 @@ function handleNoClick() {
         yesBtnEnabled = true
         noBtn.style.display = "none";
         
-        const msg = "Yah ketangkap juga 😳 Oke deh sekarang boleh pilih YES ❤️😉"
-        showTeaseMessage(msg)
+        const msg = "Yah ketangkap juga... 😳 Oke deh sekarang boleh pilih 'Yes'... ❤️😉"
+        showTeaseMessage(msg, true)
     }
     
 }
