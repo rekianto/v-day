@@ -157,8 +157,8 @@ h1 {
 /* Music toggle button */
 #music-toggle {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 20px;        /* pindah ke atas */
+    left: 20px;       /* pindah ke kiri */
     background: rgba(255, 255, 255, 0.85);
     border: none;
     border-radius: 50%;
