@@ -54,23 +54,6 @@ function launchConfetti() {
     }, 300)
 }
 
-/* ================= HEARTS ================= */
-
-function spawnHearts(amount = 50) {
-    for (let i = 0; i < amount; i++) {
-        const heart = document.createElement("div")
-        heart.classList.add("flying-heart")
-        heart.textContent = "💖"
-
-        heart.style.left = Math.random() * window.innerWidth + "px"
-        heart.style.bottom = "0px"
-        heart.style.fontSize = (Math.random() * 25 + 18) + "px"
-
-        document.body.appendChild(heart)
-
-        setTimeout(() => heart.remove(), 3000)
-    }
-}
 
 /* ================= MUSIC ================= */
 
