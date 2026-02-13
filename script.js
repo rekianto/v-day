@@ -28,6 +28,13 @@ const yesTeasePokes = [
     "Yah ketangkap juga 😳 Oke deh sekarang boleh pilih YES ❤️😉"
 ]
 
+const yesTeasePokesFinal = [
+    "Coba tekan 'No' dulu... pasti kamu penasaran kan bakal apa 😏",
+    "Ayo deh, tekan 'No' sekali aja 👀",
+    "Rugi loh kalau gak coba 😈",
+    "Coba tekan 'No' lagi beb aku tunggu... 😉"
+]
+
 let yesTeasedCount = 0
 let yesTeasedCountFinal = 0
 
@@ -71,11 +78,14 @@ function handleYesClick() {
     if (!yesBtnEnabled) {
         //Tease her to try No first
         if(!runawayEnabled) {
-            const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
-            yesTeasedCount++
-            showTeaseMessage(msg)
-            return
+           const msg = yesTeasePokes[Math.min(yesTeasedCount, yesTeasePokes.length - 1)]
+           yesTeasedCount++
+           showTeaseMessage(msg)
+           return
         }
+        const msg2 = yesTeasePokesFinal[Math.min(noClickCount - 9, yesTeasePokesFinal.length - 1)]
+        showTeaseMessage(msg2)
+        return
        
     }
     window.location.href = 'yes.html'
