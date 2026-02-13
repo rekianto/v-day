@@ -7,13 +7,23 @@ window.addEventListener('load', () => {
     const music = document.getElementById('bg-music')
     const toggleBtn = document.getElementById('music-toggle')
 
-    if (music) {
-        music.volume = 0.3
-        music.play().then(() => {
-            musicPlaying = true
-            if (toggleBtn) toggleBtn.textContent = '🔊'
-        }).catch(() => {})
-    }
+    if (!music) return
+
+    music.volume = 0.3
+
+    // Coba autoplay
+    music.play().then(() => {
+        musicPlaying = true
+        if (toggleBtn) toggleBtn.textContent = '🔊'
+    }).catch(() => {
+        // Kalau diblok browser, tunggu klik pertama
+        document.addEventListener('click', () => {
+            music.play().then(() => {
+                musicPlaying = true
+                if (toggleBtn) toggleBtn.textContent = '🔊'
+            }).catch(() => {})
+        }, { once: true })
+    })
 })
 
 /* ================= CONFETTI ================= */
